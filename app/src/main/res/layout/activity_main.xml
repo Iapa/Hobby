@@ -4,47 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false"
     android:fitsSystemWindows="true"
-    tools:context="me.appa.geekly.MainActivity">
+    android:id="@+id/drawerlayout"
+    tools:context=".main.MainActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <android.support.design.widget.AppBarLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <include layout="@layout/include_toolbar"
+            android:id="@+id/toolbar"/>
+
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_below="@id/toolbar"
             android:layout_width="match_parent"
-            android:clipToPadding="false"
-            android:layout_height="?attr/actionBarSize"
-            android:title="@string/app_name"
-            android:paddingTop="25dp"
-            android:fitsSystemWindows="true"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"/>
-
-        <android.support.design.widget.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
-    </android.support.design.widget.AppBarLayout>
-
+            android:layout_height="match_parent"
+            android:elevation="5dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
     </android.support.design.widget.CoordinatorLayout>
 
-
-
     <android.support.design.widget.NavigationView
+        android:id="@+id/navigation"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:clipToPadding="false"
+        app:itemBackground="@drawable/ripple_navi_item"
         app:menu="@menu/menu_navi"
-        app:headerLayout="@layout/navigation_header"
-        />
+        app:headerLayout="@layout/navigation_header"/>
 
 </android.support.v4.widget.DrawerLayout>

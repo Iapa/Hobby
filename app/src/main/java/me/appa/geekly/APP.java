@@ -3,11 +3,9 @@ package me.appa.geekly;
 import android.app.Application;
 import android.content.Context;
 import com.facebook.stetho.Stetho;
-import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.orhanobut.logger.Logger;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
-import okhttp3.OkHttpClient;
 
 /**
  * Created by niuxm on 2016/3/15.
