@@ -24,11 +24,21 @@ task clean(type: Delete) {
 }
 
 ext {
-    //SDK and build tools viersion
-    compileSdkVersion = 'android-N'
-    buildToolsVersion = '24.0.0 rc1'
 
-    // APP dependencies
-    googleSupportLibraryViersion = '23.2.1'
+    configuration = [buildToolsVersion: "24.0.0 rc1",
+                     compileVersion   : 23,
+                     minSdk           : 15,
+                     version_code     : 4,
+                     version_name     : "1.0.0"]
 
+    libraries = [supportVersion: "23.2.1",
+                 rxjava        : "1.1.1",
+                 rxandroid     : "1.1.0",
+                 retrofit      : "2.0.0-beta4"]
+
+    testingLibrares = [junit         : "4.12",
+                       mockito       : "1.+",
+                       espresso      : "2.2.1",
+                       espressoRunner: "0.4.1",
+                       espressoRules : "0.4.1"]
 }
