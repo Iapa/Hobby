@@ -2,6 +2,7 @@ package me.appa.geekly.picture.widget;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -22,7 +23,7 @@ import me.appa.geekly.base.BaseFragment;
 public class PicFragment extends BaseFragment{
 
     @Bind(R.id.pic_viewpager) ViewPager mViewPager;
-
+    @Bind(R.id.tab_layout) TabLayout mTabLayout;
 
     public static PicFragment getInstance() {
 
@@ -42,6 +43,11 @@ public class PicFragment extends BaseFragment{
         ButterKnife.bind(this,view);
         mViewPager.setOffscreenPageLimit(3);
         setupViewPager(mViewPager);
+        mTabLayout.setupWithViewPager(mViewPager);
+
+        mTabLayout.addTab(mTabLayout.newTab());
+        mTabLayout.addTab(mTabLayout.newTab());
+        mTabLayout.addTab(mTabLayout.newTab());
 
         return view;
     }
@@ -52,8 +58,8 @@ public class PicFragment extends BaseFragment{
                 getChildFragmentManager());
 
         pagerAdapter.addFragments(BeautyManFragment.getInstance(1),"美女");
-        pagerAdapter.addFragments(BeautyManFragment.getInstance(2),"美女");
-        pagerAdapter.addFragments(BeautyManFragment.getInstance(3),"美女");
+        pagerAdapter.addFragments(BeautyManFragment.getInstance(2),"帅哥");
+        pagerAdapter.addFragments(BeautyManFragment.getInstance(3),"风景");
         viewPager.setAdapter(pagerAdapter);
     }
 

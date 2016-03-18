@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="2dp"
+    android:layout_marginBottom="2dp"
+   android:layout_marginRight="2dp"
+    android:clickable="true"
+    app:cardUseCompatPadding="true"
     android:foreground="?attr/selectableItemBackgroundBorderless"
-    app:cardCornerRadius="3dp"
-    tools:ignore="ContentDescription"
-    >
+    app:cardCornerRadius="2dp"
+    tools:ignore="ContentDescription">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -18,21 +20,33 @@
 
         <ImageView
             android:id="@+id/item_imageview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:src="@drawable/ic_user_background"/>
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:src="@drawable/ic_avatar"
+            android:scaleType="centerCrop"
+            />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/item_tv"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/item_imageview"
             android:layout_centerHorizontal="true"
             android:textSize="20sp"
-            android:layout_marginTop="5dp"
-            android:textAppearance="?attr/textAppearanceListItem"
+            android:padding="4dp"
+            android:background="#33ff00ff"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
             android:gravity="center"
-            tools:text="我是大美女！"/>
+            android:text="我是大美女！"/>
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/selected_overlay"
+        android:background="#88673AB7"
+        tools:visibility="visible"
+        android:visibility="invisible"/>
 
 </android.support.v7.widget.CardView>

@@ -13,7 +13,7 @@ import com.squareup.leakcanary.RefWatcher;
 public class APP extends Application {
 
     private RefWatcher mRefWatcher;
-    private Context mContext;
+    private static Context mContext;
 
 
     //
@@ -28,12 +28,13 @@ public class APP extends Application {
         Logger.init();
         mRefWatcher = LeakCanary.install(this);
         Stetho.initializeWithDefaults(this);
+        mContext = this;
     }
 
 
     //some utils class need context
-    public Context getContext() {
-        return this.getApplicationContext();
+    public static Context getContext() {
+        return mContext;
     }
 
 

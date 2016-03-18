@@ -9,8 +9,10 @@
         android:id="@+id/pic_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:clipToPadding="false"
+        android:layout_marginRight="2dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
         />
 
 </android.support.v4.widget.SwipeRefreshLayout>
